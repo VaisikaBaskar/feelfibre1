@@ -1,0 +1,223 @@
+/* ── TopHeader ─────────────────────────────────────────── */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  gap: 16px;
+}
+
+.top-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  white-space: nowrap;
+}
+
+/* Wishlist & Cart Containers */
+.wishlist-container,
+.cart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-icon,
+.cart-icon {
+  font-size: 24px;
+  transition: transform 0.2s ease;
+}
+
+.wishlist-icon {
+  color: #d32f2f;
+}
+
+.cart-icon {
+  color: #333;
+}
+
+.wishlist-container:hover .wishlist-icon,
+.cart-container:hover .cart-icon {
+  transform: scale(1.1);
+}
+
+.wishlist-count,
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: #d32f2f;
+  color: white;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
+  z-index: 2;
+}
+
+.cart-count {
+  min-width: 18px;
+  width: auto;
+  padding: 0 4px;
+  border-radius: 10px;
+}
+
+/* CENTER – Search */
+.top-header__search {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 40px;
+}
+
+.top-header__search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.top-header__search-input {
+  width: 100%;
+  padding: 10px 50px 10px 25px;
+  border: 1px solid #c0c0c0;
+  /* Light grey border as in image */
+  border-radius: 50px;
+  /* Highly rounded as in image */
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  /* White background */
+  color: #333;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.top-header__search-input::placeholder {
+  color: #5c7ca9;
+  /* Blueish color for placeholder as in image */
+  opacity: 0.8;
+}
+
+.top-header__search-input:focus {
+  border-color: #2e7d32;
+}
+
+.top-header__search-btn {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #888;
+  /* Grey icon as in image */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.top-header__search-btn:hover {
+  color: #2e7d32;
+}
+
+/* LEFT – Logo */
+.top-header__logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2e7d32;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.top-header__logo:hover {
+  opacity: 0.8;
+}
+
+/* Icon buttons */
+.top-header__icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.25rem;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, color 0.18s;
+}
+
+.top-header__icon-btn:hover {
+  background: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+}
+
+/* Track Order button */
+.top-header__track-btn {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.top-header__track-btn:hover {
+  background-color: #1b5e20;
+  transform: translateY(-1px);
+}
+
+.top-header__track-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .top-header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  /* Logo spans full width on mobile */
+  .top-header__logo {
+    flex: 1 0 100%;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  /* Search bar full width */
+  .top-header__search {
+    flex: 1 0 100%;
+    max-width: 100%;
+    margin: 0;
+    order: 2;
+  }
+
+  /* Actions row at the bottom */
+  .top-header__actions {
+    flex: 1 0 100%;
+    justify-content: center;
+    order: 3;
+  }
+}

@@ -1,0 +1,44 @@
+.announcement-bar-container {
+    width: 100%;
+    background-color: #2e7d32;
+    /* feelfibre brand green */
+    color: #ffffff;
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+}
+
+.announcement-bar-marquee {
+    display: flex;
+    white-space: nowrap;
+    padding-left: 100vw;
+    animation: scrollText 25s linear infinite;
+    /* Optional: Pause on hover */
+    /* pointer-events: none; */
+}
+
+/* Pause animation on hover */
+.announcement-bar-container:hover .announcement-bar-marquee {
+    animation-play-state: paused;
+}
+
+.announcement-text {
+    padding-right: 80px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

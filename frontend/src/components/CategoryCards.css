@@ -1,0 +1,104 @@
+/* ── Category Section ────────────────────────────────────── */
+.category-section {
+    padding: 50px 0;
+    background: #f1f8f2;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ── Individual Card ─────────────────────────────────────── */
+.category-card {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.category-card:focus-visible {
+    outline: 2px solid #2e7d32;
+    outline-offset: 3px;
+}
+
+/* Image */
+.category-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dark overlay */
+.category-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+.category-card:hover .category-card__overlay {
+    background: rgba(0, 0, 0, 0.42);
+}
+
+/* Label */
+.category-card__label {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+/* Tablet: 2 per row */
+@media (max-width: 768px) {
+    .category-card {
+        width: calc(50% - 15px);
+        min-width: 140px;
+        height: 130px;
+    }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 480px) {
+    .category-section {
+        padding: 28px 16px;
+    }
+
+    .category-grid {
+        gap: 16px;
+    }
+
+    .category-card {
+        width: 100%;
+        height: 140px;
+    }
+}

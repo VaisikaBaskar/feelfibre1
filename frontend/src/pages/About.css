@@ -1,0 +1,177 @@
+.about-page-container {
+    background-color: #fcfcfc;
+    min-height: calc(100vh - 200px);
+    font-family: inherit;
+    padding-bottom: 50px;
+}
+
+/* Section 1: Hero / Page Title */
+.about-hero {
+    background-color: #f1f8e9;
+    /* Light FeelFibre green */
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.about-hero h1 {
+    color: #2e7d32;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.about-hero p {
+    color: #444;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Centered content wrapper */
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Generic Section Styles */
+.about-section {
+    padding: 40px 0;
+}
+
+.about-section h2 {
+    color: #2e7d32;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.about-section h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: #66bb6a;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-section p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section 3: Why Choose FeelFibre (Grid Layout) */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.benefit-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    font-size: 40px;
+    color: #66bb6a;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Section 4 & 5: Mission and Vision */
+.mission-vision-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.mission-card,
+.vision-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #2e7d32;
+}
+
+/* Section 6: Our Products */
+.about-products {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    margin-top: 20px;
+}
+
+.products-intro {
+    margin-bottom: 30px !important;
+}
+
+.products-list {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.products-list li {
+    background: #f9f9f9;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #66bb6a;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.products-list li strong {
+    color: #2e7d32;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-hero p {
+        font-size: 16px;
+    }
+
+    .mission-vision-container {
+        flex-direction: column;
+    }
+}

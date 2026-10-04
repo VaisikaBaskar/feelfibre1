@@ -1,0 +1,129 @@
+/* ── Navbar ──────────────────────────────────────────────── */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Link list */
+.navbar__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Individual link */
+.navbar__link {
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar__link:hover {
+    color: #2e7d32;
+}
+
+.navbar__link--active {
+    color: #2e7d32;
+    border-bottom-color: #2e7d32;
+}
+
+/* ── Hamburger (hidden on desktop) ──────────────────────── */
+.navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+}
+
+.navbar__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+/* Animated X when open */
+.navbar__hamburger--open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar__hamburger--open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__hamburger--open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: flex-start;
+        padding: 0 16px;
+    }
+
+    .navbar__hamburger {
+        display: flex;
+    }
+
+    .navbar__links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        z-index: 999;
+        padding: 8px 0;
+    }
+
+    .navbar__links--open {
+        display: flex;
+    }
+
+    .navbar__links li {
+        width: 100%;
+    }
+
+    .navbar__link {
+        display: block;
+        padding: 12px 20px;
+        border-bottom: none;
+        width: 100%;
+    }
+
+    .navbar__link--active {
+        background-color: rgba(46, 125, 50, 0.08);
+        border-bottom: none;
+        border-left: 3px solid #2e7d32;
+    }
+}
